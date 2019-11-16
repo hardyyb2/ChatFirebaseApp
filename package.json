@@ -1,0 +1,21 @@
+{
+  "name": "chatappwithlogin",
+  "version": "1.0.0",
+  "description": "chatting app with login",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "nodemon": "nodemon index.js -e html,css",
+    "bsync": "browser-sync start --proxy \"localhost:3000\" --files \"public\" "
+  },
+  "author": "hardik badola",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
