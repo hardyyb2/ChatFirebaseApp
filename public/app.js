@@ -23,7 +23,7 @@ $(document).ready(() => {
             console.log(`user logged out`)
             $(`.logged-out`).show();
             $(`.logged-in`).hide();
-
+            setupChat([])
         }
     })
 
