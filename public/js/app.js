@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    
+
     const signinForm = $(`#signinform`);
     const loginForm = $(`#loginform`);
     const logout = $(`#logout-button`);
@@ -7,19 +7,21 @@ $(document).ready(() => {
     auth.onAuthStateChanged(user => {
         if (user) {
             console.log(`user logged in`)
-
+            
+            $(`.landing-page`).hide();
+            $(`.chat-body`).show();
             $(`.logged-out`).hide();
             $(`.logged-in`).show();
             setupChat(2);
 
-            const textdiv = $(`#account-modal .modal-body`);
-           db.collection(`users`).doc(user.uid).get().then(doc => {
-                textdiv.html(`<h5>You are signed in as ${user.email}</h5>
-                <h5>${doc.data().bio}</h5>
-                `)
+            db.collection(`users`).doc(user.uid).get().then(doc => {
+                $(`#account-user-name`).text(doc.data().name);
+                $(`#account-user-bio`).html(`<i class="fas fa-quote-left"></i> `+ doc.data().bio)
             })
 
         } else {
+            $(`.landing-page`).css("display","flex");
+            $(`.chat-body`).hide(); 
             console.log(`user logged out`)
             $(`.logged-out`).show();
             $(`.logged-in`).hide();
@@ -30,13 +32,14 @@ $(document).ready(() => {
     loginForm.on(`submit`, (e) => {
         e.preventDefault();
         const email = $(`#login-email`).val()
-        const password = $(`#login-password`).val()
+        let password = $(`#login-password`).val()
         auth.signInWithEmailAndPassword(email, password).then(cred => {
             loginForm.trigger(`reset`)
             $(`#login-modal`).modal(`hide`)
-     
+
         }).catch(err => {
-            console.log(`failed to sign in  ` + err.message)
+            $(`#login-password`).addClass(`invalid`);
+         console.log(`failed to sign in  ` + err.message)
         })
     })
 
@@ -52,10 +55,12 @@ $(document).ready(() => {
             signinModal.modal(`hide`);
             db.collection(`users`).doc(cred.user.uid).set({
                 email: email,
-                bio:$(`#user-bio`).val()
+                name:$(`#signin-user-name`).val(),
+                bio: $(`#user-bio`).val()
             })
 
         }).catch(err => {
+            $(`#signin-email`).addClass(`invalid`)
             console.log(`failed to create new user ` + err.message)
         })
     })
@@ -63,8 +68,7 @@ $(document).ready(() => {
 
     logout.click((e) => {
         e.preventDefault();
-        auth.signOut().then(() => {
-        }).catch(err => {
+        auth.signOut().then(() => {}).catch(err => {
             console.log(`failed to logout ` + err.message)
         });
     })

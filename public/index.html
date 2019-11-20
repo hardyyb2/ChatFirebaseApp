@@ -8,7 +8,9 @@
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
 
     <title></title>
@@ -16,116 +18,155 @@
 </head>
 
 <body>
-
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="javascript:void(0)">ChatApp</a>
-
-        <ul class="navbar-nav">
-            <li class="nav-item logged-in">
-                <a href="javascript:void(0)" id="account-info" data-toggle="modal" class="nav-link"
-                    data-target="#account-modal">Account</a>
-            </li>
-            <li class="nav-item logged-out">
-                <a class="nav-link" href="javascript:void(0)" data-toggle="modal" data-target="#login-modal">LogIn</a>
-            </li>
-            <li class="nav-item logged-in">
-                <a class="nav-link" id="logout-button" href="javascript:void(0)">LogOut</a>
-            </li>
-            <li class="nav-item logged-out">
-                <a class="nav-link" href="javascript:void(0)" data-toggle="modal" data-target="#signin-modal">SignIn</a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- modals -->
-    <!-- account modal -->
-
-    <div class="modal fade" id="account-modal">
-        <div class="modal-dialog modal-dialog-centered ">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">User Info</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- login modal -->
-    <div class="modal fade" id="login-modal">
-        <div class="modal-dialog modal-dialog-centered ">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Log In</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form id="loginform">
-                        <!-- add is-valid is-invalid and invalid-feedback -->
-                        <label for="login-email">Email:</label>
-                        <input type="text" class="form-control" id="login-email" required>
-                        <label for="login-password">Password:</label>
-                        <input type="password" class="form-control" id="login-password" required>
-                        <button type="submit" class="btn btn-primary btn-block btn-lg" id="login-button">Log In</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- sing in modal -->
-    <div class="modal fade" id="signin-modal">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title text-center">Create Account</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form id="signinform">
-                        <div class="md-form">
-                            <label for="signin-name">Name</label>
-                            <input type="text" class="form-control" id="signin-name" required>
-                        </div>
-                        <div class="md-form">
-                            <label for="signin-user-name">User Name:</label>
-                            <input type="text" class="form-control" id="signin-user-name" required>
-                        </div>
-                        <div class="md-form">
-
-                            <label for="signin-email">Email:</label>
-                            <input type="text" class="form-control" id="signin-email" required>
-                        </div>
-                        <div class="md-form">
-
-                            <label for="signin-password">Password:</label>
-                            <input type="password" class="form-control" id="signin-password" required>
-                        </div>
-                        <div class="md-form">
-
-                            <label for="user-bio">Bio:</label>
-                            <input type="text" class="form-control" id="user-bio">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-success btn-block btn-lg" id="signin-button">Create
-                                My
-                                Account</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="container-fluid">
-        <!-- chat-body -->
-        <div class="chat-body">
 
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <a class="navbar-brand"  style="font-family:'pacifico',cursive;" href="/"><i class="fa fa-comments prefix"></i> ChatApp</a>
+
+            <ul class="navbar-nav">
+                <li class="nav-item logged-in">
+                    <a href="javascript:void(0)" id="account-info" data-toggle="modal" class="nav-link"
+                        data-target="#account-modal">Account</a>
+                </li>
+                <li class="nav-item logged-out">
+                    <a class="nav-link" href="javascript:void(0)" data-toggle="modal"
+                        data-target="#login-modal">LogIn</a>
+                </li>
+                <li class="nav-item logged-in">
+                    <a class="nav-link" id="logout-button" href="javascript:void(0)">LogOut</a>
+                </li>
+                <li class="nav-item logged-out">
+                    <a class="nav-link" href="javascript:void(0)" data-toggle="modal"
+                        data-target="#signin-modal">SignIn</a>
+                </li>
+            </ul>
+        </nav>
+        
+
+        <!-- chat-body -->
+        <div class="landing-page">
+            <div class="landing-page--container">
+                <div class="landing-page--header">Chat With The World </div>
+                <div class="landing-page--subheader">Login to begin chatting in a group</div>
+                <div class="landing-page--icons">
+                    <button type="button" data-target="#login-modal" data-toggle="modal" id="landing-page--login"
+                        class="btn btn-outline-black btn-lg">Log In</button>
+                    <button type="button" data-target="#signin-modal" data-toggle="modal" id="landing-page--signup"
+                        class="btn btn-black btn-lg  waves-effect">Sign Up</button>
+                </div>
+            </div>
+        </div>
+        <div class="chat-body">
+        </div>
+        <!-- modals -->
+        <!-- account modal -->
+
+        <div class="modal fade" id="account-modal">
+            <div class="modal-dialog modal-dialog-centered ">
+                <div class="modal-content">
+                    <div class="card">
+                        <!-- Background color -->
+                        <div class="view overlay">
+                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg"
+                                alt="Card image cap">
+                            <a href="javascript:void(0)">
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div> <!-- Content -->
+                        <div class="card-body">
+                            <!-- Name -->
+                            <h4 class="card-title" id="account-user-name"></h4>
+                            <hr>
+                            <!-- Quotation -->
+                            <p id="account-user-bio"></p>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-danger btn-block" data-dismiss="modal" >Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- login modal -->
+        <div class="modal fade" id="login-modal">
+            <div class="modal-dialog modal-dialog-centered ">
+                <div class="modal-content">
+                    <div class="modal-header ">
+                        <h4 class="modal-title">Log In</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="loginform">
+                            <!-- add is-valid is-invalid and invalid-feedback -->
+                            <div class="md-form">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="email" class="form-control validate" id="login-email" required>
+                                <label for="login-email" data-error="wrong">Email:</label>
+                            </div>
+                            <div class="md-form">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" class="form-control validate" id="login-password" required>
+                                <label for="login-password" id="login-password-label"
+                                    data-error="incorrect password or email">Password:</label>
+                            </div>
+                            <button type="submit" class="btn  btn-floating btn-deep-purple btn-block btn-lg"
+                                id="login-button">Log In</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- sign in modal -->
+        <div class="modal fade" id="signin-modal">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-center">Create Account</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="signinform">
+                            <div class="md-form">
+                                <i class="fa fa-user prefix"></i>
+                                <input type="text" class="form-control" id="signin-name" required>
+                                <label for="signin-name">Name</label>
+                            </div>
+                            <div class="md-form">
+                                <i class="fa fa-user-secret prefix"></i>
+                                <label for="signin-user-name">User Name:</label>
+                                <input type="text" class="form-control" id="signin-user-name" required>
+                            </div>
+                            <div class="md-form validate">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="email" class="form-control" id="signin-email" required>
+                                <label for="signin-email" data-error="Email is already taken">Email:</label>
+                            </div>
+                            <div class="md-form">
+                                <i class="fa fa-lock prefix"></i>
+                                <label for="signin-password">Password:</label>
+                                <input type="password" class="form-control" id="signin-password" required>
+                            </div>
+                            <div class="md-form">
+                                <i class="fa fa-edit prefix"></i>
+                                <label for="user-bio">Bio:</label>
+                                <input type="text" class="form-control" id="user-bio">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success btn-block btn-lg btn-floating"
+                                    id="signin-button">Create
+                                    My
+                                    Account</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- scripts -->
@@ -157,8 +198,8 @@
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
-    <script src="./app.js"></script>
-    <script src="./chat.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/chat.js"></script>
 </body>
 
 </html>
