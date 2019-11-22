@@ -4,8 +4,7 @@ const socket = io.connect(`/`)
 const chatBody = $(`.chat-body`)
 
 const setupChat = async function (data) {
-    if (data.length == 0) {  
-    } else {
+    if (data.length == 0) {} else {
         console.log(`logged in funciton`)
         await chatBody.html(` 
         <div id="chat-dialog">
@@ -33,7 +32,6 @@ const setupMessaging = (chatForm) => {
         console.log(`form submitted`)
         e.preventDefault();
         const message = $(`#chat-message`);
-
         socket.emit(`chat`, {
             message: message.val()
         })
@@ -42,12 +40,37 @@ const setupMessaging = (chatForm) => {
 
     socket.on(`chat`, (data) => {
         feedback.html(``)
-        if (data.message.trim().length === 0) {} else
-            output[0].innerHTML += `<p class="message-dialog-box"><strong class="message-user-header">${data.handle}</strong><br>${data.message}</p>`;
+        if (data.message.trim().length === 0) {} else {
+            output[0].innerHTML += `<p class="message-dialog-box"><strong class="message-user-header"><a id="#chat-person" data-toggle="modal" data-target="#chat-person-modal" onClick=showDetails(this)>` + $(`#account-user-name`).text() + `</a></strong><br>${data.message}</p>`;
+            let scroll = $(`.message-dialog-box:last-child`).offset().top + $(`.message-dialog-box:last-child`).height() + 100
+            console.log(scroll, $(window).height())
+            if (scroll >= $(window).height()) {
+                if (scroll > 800) {} else {
+                    $(`#chat-window`).animate({
+                        scrollTop: output[0].scrollHeight
+                    }, 'fast');
+                }
+            }
+        }
     })
     socket.on(`typing`, (data) => {
         feedback.html(`<p><em>${data}</em> is typing</p>`);
 
     })
+
+}
+
+function showDetails(e) {
+    db.collection(`users`).where("name", "==", e.innerHTML.toString().trim())
+        .get().then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+                
+                $(`#account-user-name1`).text(doc.data().name);
+                $(`#account-user-bio1`).html(`<i class="fas fa-quote-left"></i> ` + doc.data().bio)
+                if (!doc.data().url) {} else {
+                    $(`.avatar-upload1 .avatar-preview1 >div`).css(`background-image`, `url(${doc.data().url})`)
+                }
+            })
+        })
 
 }
