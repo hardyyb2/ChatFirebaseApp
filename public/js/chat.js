@@ -38,7 +38,8 @@ const setupMessaging = chatForm => {
     e.preventDefault()
     const message = $(`#chat-message`)
     socket.emit(`chat`, {
-      message: message.val()
+      message: message.val(),
+      user: $(`#account-user-name`).text()
     })
     message.val(``)
   })
@@ -63,12 +64,12 @@ const setupMessaging = chatForm => {
       console.log('was true')
       output[0].innerHTML +=
         `<p class="message-dialog-box align-right"><strong class="message-user-header"><a id="#chat-person" data-toggle="modal" data-target="#chat-person-modal" onClick=showDetails(this)>` +
-        $(`#account-user-name`).text() +
+        data.user +
         `</a></strong><br>${data.message}</p>`
     } else {
       output[0].innerHTML +=
         `<p class="message-dialog-box"><strong class="message-user-header "><a id="#chat-person" data-toggle="modal" data-target="#chat-person-modal" onClick=showDetails(this)>` +
-        $(`#account-user-name`).text() +
+        data.user +
         `</a></strong><br>${data.message}</p>`
     }
     let scroll

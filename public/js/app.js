@@ -20,6 +20,7 @@ auth.onAuthStateChanged(user => {
       .doc(user.uid)
       .get()
       .then(doc => {
+        console.log(doc.data())
         $(`#account-user-name`).text(doc.data().name)
         $(`#send-chat`).attr('disabled', false)
         $(`#account-user-bio`).html(
