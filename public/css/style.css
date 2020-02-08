@@ -1,226 +1,223 @@
 body,
 html {
-    height:100%;
-    width:100%;
-    font-family: 'poppins', sans-serif;
-    user-select: none;
-    overflow-x:hidden ;
+  height: 100%;
+  width: 100%;
+  font-family: 'poppins', sans-serif;
+  user-select: none;
+  overflow-x: hidden;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .md-form label[data-error] {
-    width: 100%;
-    text-align: left;
+  width: 100%;
+  text-align: left;
 }
 
 a {
-    color: black;
+  color: black;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav-item {
-    padding: 0 20px;
+  padding: 0 20px;
 }
 
 .modal {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .modal-content {
-    border-radius: 30px;
+  border-radius: 30px;
 }
-#signin-modal .modal-body{
-    padding-top:1px;
+#signin-modal .modal-body {
+  padding-top: 1px;
 }
-#signin-modal .modal-header{
-    padding-top:8px ;
-    padding-bottom: 4px;
-    background:rgb(0,200,81);
-    color:white;
+#signin-modal .modal-header {
+  padding-top: 8px;
+  padding-bottom: 4px;
+  background: rgb(0, 200, 81);
+  color: white;
+}
 
-}
-
-#login-modal .modal-header{
-    color:white;
-    background:rgba(81,45,168);    
+#login-modal .modal-header {
+  color: white;
+  background: rgba(81, 45, 168);
 }
 .modal-title {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 input {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 #login-button {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .logged-in,
 .logged-out {
-    display: none;
+  display: none;
 }
 
 .chat-body {
-    height: 90%;
-    background:white;
+  height: 90%;
+  background: white;
 }
 
 #chat-dialog {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 #chat-window {
-    height: 90%;
-    overflow: auto;
-    background: rgba(0, 0, 0, 0.15);
+  height: 90%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.15);
 }
 
 #chat-form {
-    height: 10%;
-    display: flex;
-    margin: 0 !important;
+  height: 10%;
+  display: flex;
+  margin: 0 !important;
 }
 
 #chat-message {
-    padding: 0;
-    margin: 0 5px 0 10px;
+  padding: 0;
+  margin: 0 5px 0 10px;
 }
 
 #send-chat {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 #output p {
-    padding: 14px 0px;
-    margin: 20px 10px 10px 10px;
-    margin: 0 20px;
-    color: #555;
+  padding: 14px 0px;
+  margin: 20px 10px 10px 10px;
+  margin: 0 20px;
+  color: #555;
 }
 
 #feedback p {
-    color: #aaa;
-    padding: 14px 0px;
-    margin: 0 20px;
+  color: #aaa;
+  padding: 14px 0px;
+  margin: 0 20px;
 }
 
 #output strong {
-    color: #575ed8;
+  color: #575ed8;
 }
 
 .container-fluid {
-    width: 100%;
-    height: 100%;
-    background-image: url("/img/landing12.jpg") !important;
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 0;
-    overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-image: url('/img/landing12.jpg') !important;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  overflow: hidden;
 }
 
 .navbar {
-    background: white;
+  background: white;
 }
 
 .landing-page {
-    widows: 100%;
-    height: 90%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+  widows: 100%;
+  height: 90%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .landing-page--container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transform: translate(0%, -15%);
-    align-items: center;
-    color: black;
-    font-weight: 500;
-    margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translate(0%, -15%);
+  align-items: center;
+  color: black;
+  font-weight: 500;
+  margin: 20px;
 }
 
 .landing-page--subheader {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    text-align: center;
-    font-family: 'Pacifico', cursive;
-    font-weight: 100;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-weight: 100;
 }
 
 .landing-page--header {
-    font-size: 4rem;
-    margin-bottom: 10px;
-    ;
-    text-align: center;
-    font-family: 'Pacifico', cursive;
+  font-size: 4rem;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
 }
 
 #landing-page--login,
 #landing-page--signup {
-    padding: 15px 50px;
-    margin: 15px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    font-size: 1.1rem;
+  padding: 15px 50px;
+  margin: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
+  #landing-page--login,
+  #landing-page--signup {
+    width: 90%;
+    margin-right: 20px;
+  }
 
-    #landing-page--login,
-    #landing-page--signup {
-        width: 90%;
-        margin-right: 20px;
-    }
+  .landing-page--header {
+    font-size: 2.5rem;
+  }
 
-    .landing-page--header {
-        font-size: 2.5rem;
-    }
-
-    .landing-page--subheader {
-        font-size: 1rem;
-    }
+  .landing-page--subheader {
+    font-size: 1rem;
+  }
 }
 
-@media screen and (max-width:575px) {
-    .chat-body {
-        height: 85%;
-    }
+@media screen and (max-width: 575px) {
+  .chat-body {
+    height: 85%;
+  }
 }
 
 .message-dialog-box {
-    padding: 5px 30px 5px 30px !important;
-    margin-bottom: 4px !important;
-    background: white;
-    border-radius: 0px 30px 30px 30px;
-    word-break: break-all;
-    line-break: auto;
-    display: inline-block;
-    clear: both;
-    float: left;
+  padding: 5px 30px 5px 30px !important;
+  margin-bottom: 4px !important;
+  background: white;
+  border-radius: 0px 30px 30px 30px;
+  word-break: break-all;
+  line-break: auto;
+  display: inline-block;
+  clear: both;
+  float: left;
 }
 
 .message-user-header {
-    font-size: 1.3rem;
-    font-family: 'poppins', sans-serif;
-    text-transform: capitalize;
+  font-size: 1.3rem;
+  font-family: 'poppins', sans-serif;
+  text-transform: capitalize;
 }
 
 .avatar-upload,
@@ -243,7 +240,7 @@ input {
   height: 50px;
   margin-bottom: 0;
   border-radius: 100%;
-  background: rgb(255,53,71);
+  background: rgb(255, 53, 71);
   border: 1px solid transparent;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
   cursor: pointer;
@@ -269,68 +266,73 @@ input {
 .avatar-upload1 .avatar-preview1 {
   width: 100%;
   height: 300px;
- box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
 }
 
-.avatar-upload .avatar-preview >div,
-.avatar-upload1 .avatar-preview1 >div{
-    width:100%;
-    height:100%;
-    background-image: url(/img/profile.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-}
-#imagePreview{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align:center;
-    color:white;
-    font-size:30px;
-    font-weight:bolder;
+.avatar-upload .avatar-preview > div,
+.avatar-upload1 .avatar-preview1 > div {
+  width: 100%;
+  height: 100%;
+  background-image: url(/img/profile.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
-.clicked{
-    transform: scale(0.98);
+#imagePreview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.clicked {
+  transform: scale(0.98);
 }
 .lds-ring {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    z-index:4;
-    display:inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  z-index: 4;
+  display: inline-block;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
   }
-  .lds-ring div {
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
-    border: 8px solid #fff;
-    border-radius: 50%;
-    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: #fff transparent transparent transparent;
+  100% {
+    transform: rotate(360deg);
   }
-  .lds-ring div:nth-child(1) {
-    animation-delay: -0.45s;
-  }
-  .lds-ring div:nth-child(2) {
-    animation-delay: -0.3s;
-  }
-  .lds-ring div:nth-child(3) {
-    animation-delay: -0.15s;
-  }
-  @keyframes lds-ring {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  #lds-text{
-      z-index:55;
-  }
+}
+#lds-text {
+  z-index: 55;
+}
+.align-right {
+  float: right;
+  border-radius: 30px 0px 30px 30px;
+}
