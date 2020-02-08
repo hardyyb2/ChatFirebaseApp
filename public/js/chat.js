@@ -65,12 +65,12 @@ const setupMessaging = chatForm => {
       output[0].innerHTML +=
         `<p class="message-dialog-box align-right"><strong class="message-user-header"><a id="#chat-person" data-toggle="modal" data-target="#chat-person-modal" onClick=showDetails(this)>` +
         data.user +
-        `</a></strong><br>${data.message}</p>`
+        `</a></strong><br><i class="sender-message">${data.message}</i></p>`
     } else {
       output[0].innerHTML +=
         `<p class="message-dialog-box"><strong class="message-user-header "><a id="#chat-person" data-toggle="modal" data-target="#chat-person-modal" onClick=showDetails(this)>` +
         data.user +
-        `</a></strong><br>${data.message}</p>`
+        `</a></strong><br><i>${data.message}</i></p>`
     }
     let scroll
     //fixed , message-last-child issue
